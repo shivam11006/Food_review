@@ -33,13 +33,19 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const SidebarContent = () => (
     <div className="flex flex-col h-full">
       {/* Logo */}
-      <div className="flex items-center gap-3 px-6 py-5 border-b border-border">
-        <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow">
-          <UtensilsCrossed className="w-5 h-5 text-white" />
+      <div className="flex items-center gap-3 px-5 py-5 border-b border-border">
+        {/* SVG Logo Mark */}
+        <div className="relative flex-shrink-0">
+          <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center shadow-md">
+            <UtensilsCrossed className="w-5 h-5 text-white" />
+          </div>
+          <span className="absolute -top-1 -right-1 w-4 h-4 bg-yellow-400 rounded-full flex items-center justify-center text-white" style={{ fontSize: '8px', lineHeight: 1 }}>★</span>
         </div>
         <div>
-          <p className="font-bold text-textPrimary text-sm leading-none">FoodReview</p>
-          <p className="text-textSecondary text-xs">Organizer Dashboard</p>
+          <p className="font-extrabold text-textPrimary text-base leading-tight tracking-tight">
+            Food<span className="text-primary">Review</span>
+          </p>
+          <p className="text-textSecondary text-xs font-medium">Organizer Dashboard</p>
         </div>
       </div>
 
@@ -131,8 +137,15 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           </button>
 
           <div className="flex items-center gap-2 lg:hidden">
-            <UtensilsCrossed className="w-5 h-5 text-primary" />
-            <span className="font-bold text-textPrimary">FoodReview</span>
+            <div className="relative">
+              <div className="w-7 h-7 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center shadow">
+                <UtensilsCrossed className="w-3.5 h-3.5 text-white" />
+              </div>
+              <span className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-yellow-400 rounded-full flex items-center justify-center text-white" style={{ fontSize: '7px', lineHeight: 1 }}>★</span>
+            </div>
+            <span className="font-extrabold text-textPrimary tracking-tight">
+              Food<span className="text-primary">Review</span>
+            </span>
           </div>
 
           <div className="ml-auto flex items-center gap-3">
